@@ -1,0 +1,79 @@
+from odoo import api, fields, models, SUPERUSER_ID, _
+from odoo.exceptions import AccessError, UserError, ValidationError
+
+class OrderDeliveryLine(models.Model):
+    _name = "order.delivery.line"
+    _description = "Sale Order Delivery Line"
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get('name', _("New")) == _("New"):
+                vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or _("New")
+        return super().create(vals_list)
+
+    name = fields.Char("Name",required=True,default=lambda self: _('New'))
+    size = fields.Char("Size")
+    order_id = fields.Many2one(comodel_name = "sale.order",required=True,string = "Sale Order Line",
+                              ondelete='cascade', index=True, copy=False)
+    line_id = fields.Many2one(comodel_name = "sale.order.line",required=True,
+                              domain = "[('order_id','=',parent.id)]")
+
+    completed_qty = fields.Float("Completed Qty")
+    invoice_no = fields.Integer("Invoice No.")
+    remarks = fields.Char("Remarks")
+
+
+class SaleOrder(models.Model):
+    _inherit="sale.order"
+    _description = "Mill Order"
+
+    @api.depends("ingot_price",
+                 "rolling","extra_rate")
+    def _compute_net_rate(self):
+        self.net_rate = self.ingot_price+self.extra_rate+self.rolling
+        return
+
+    @api.depends('order_line')
+    def _compute_balance_qty(self):
+        print ("================compute _blance")
+        total_qty = 0
+        delivered_qty = 0
+        for i in self.order_line:
+            total_qty+= i.product_uom_qty
+            delivered_qty+=i.qty_delivered
+        self.balance_qty = total_qty-delivered_qty
+
+    ingot_price = fields.Float(string="Ingot Price")
+    rolling = fields.Float(string = "Rolling",default = 0)
+    extra_rate = fields.Float(string = "Extra Rate",default = 0)
+    loading = fields.Boolean(string = "Loading Inclusive")
+    net_rate = fields.Float(string = "Net Rate", compute = '_compute_net_rate')
+    balance_qty = fields.Float(string = "Balance Qty",compute = "_compute_balance_qty")
+    delivery_line = fields.One2many(comodel_name="order.delivery.line", inverse_name="order_id", string="Delivery Line")
+    po_id = fields.Many2one("purchase.order",'Purchase Order')
+
+class SaleOrderLine(models.Model):
+    _inherit = "sale.order.line"
+    _description = "Mill Order Line"
+
+
+    cut_length = fields.Char("Cut Length")
+    tolerance = fields.Char("Tolerance")
+
+    @api.depends(
+        'qty_delivered_method',
+        'order_id.delivery_line'
+    )
+    def _compute_qty_delivered(self):
+        """
+            line.is_expense will always be false hence the delivery method will always be manual
+        """
+        super()._compute_qty_delivered()
+        for line in self:
+            delivery_lines = line.env['order.delivery.line'].search([('line_id','=',line._origin.id)])
+            qty = 0.00
+            for i in delivery_lines:
+                qty+= i.completed_qty
+            line.qty_delivered = qty
+

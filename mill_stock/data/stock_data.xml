@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--    Attributes    -->
+        <record id = "attribute_grade" model="product.attribute">
+            <field name = "name">Grades</field>
+            <field name="create_variant">always</field>
+        </record>
+        <record id = "attribute_edge" model="product.attribute">
+            <field name = "name">Edges</field>
+            <field name="create_variant">always</field>
+        </record>
+
+        <!--    Attribute Values    -->
+        <record id = "attribute_value_square_edge" model = "product.attribute.value">
+            <field name = "name">Square</field>
+            <field name = "attribute_id" ref="mill_stock.attribute_edge"/>
+        </record>
+        <record id = "attribute_value_round_edge" model = "product.attribute.value">
+            <field name = "name">Round</field>
+            <field name = "attribute_id" ref="mill_stock.attribute_edge"/>
+        </record>
+    </data>
+</odoo>

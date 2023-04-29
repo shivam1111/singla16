@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_mill_order" model="ir.ui.view">
+        <field name="name">mill.order.form</field>
+        <field name = "model">sale.order</field>
+        <field name = "inherit_id" ref = "sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr ="//field[@name='partner_id']" position="after">
+                <field name = "ingot_price" />
+                <field name = "extra_rate" />
+                <field name = "rolling" />
+                <field name = "net_rate" />
+                <field name = "loading" />
+            </xpath>
+            <xpath expr = "//field[@name='payment_term_id']" position="after">
+                <field name = "po_id" />
+            </xpath>
+            <xpath expr = "//page[@name='order_lines']/field[@name='order_line']/tree" position="inside">
+                <field name = "cut_length" />
+                <field name = "tolerance"/>
+            </xpath>
+            <xpath expr = "//group[@name ='sale_total']" position="inside">
+                <field name = "balance_qty" />
+            </xpath>
+            <xpath expr = "//group[@name='note_group']" position = "inside">
+                <h2 attrs = "{'invisible':[('state','in',['draft','cancel'])]}" >Delivery Lines</h2>
+                <field name = "delivery_line" nolabel = "1" attrs = "{'invisible':[('state','in',['draft','cancel'])]}">
+                    <tree  string="Delivery Lines" editable="bottom">
+                        <field name = "name" readonly="1" />
+                        <field name = "line_id" string = "Order Line" domain = "[('order_id','=',parent.id)]"  />
+                        <field name = "completed_qty" />
+                        <field name = "invoice_no" />
+                        <field name = "remarks" />
+                    </tree>
+                </field>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
