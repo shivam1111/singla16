@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="mill_management_roots"
+        name="Mill Management"
+        active="True"
+        sequence="30">
+        <menuitem id = "mill_product_root" name = "Products" sequence="50">
+            <menuitem id = "mill_finish_product" name = "Finished Products" sequence="10"
+                      action = "finish_product_template_action" />
+        </menuitem>
+    </menuitem>
+</odoo>

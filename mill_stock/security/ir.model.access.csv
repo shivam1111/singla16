@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_element_elements,element.element,model_element_element,sales_team.group_sale_salesman,1,1,1,1
+access_composition_line,composition.line,model_composition_line,sales_team.group_sale_salesman,1,1,1,1
+access_material_grade,delivery.grade.sale.user,model_material_grade,sales_team.group_sale_salesman,1,1,1,1
+access_material_grade_purchase,purcahse.material.grade,model_material_grade,purchase.group_purchase_user,1,1,1,1
+access_heat_heat_sale,sale.heat.heat,model_heat_heat,sales_team.group_sale_salesman,1,1,0,0
+access_heat_heat_purchase,purchase.heat.heat,model_heat_heat,purchase.group_purchase_user,1,1,1,1
+access_ingot_size,sale.ingot.size,model_ingot_size,purchase.group_purchase_user,1,1,1,1
+access_inclusion_rating,inclusion.rating,model_inclusion_rating_line,,1,1,1,1

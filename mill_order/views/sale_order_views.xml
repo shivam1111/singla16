@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <!-- TODO Try grid entry also for sale order line in products -->
+    <!-- Sale Order Form View -->
     <record id="view_mill_order" model="ir.ui.view">
         <field name="name">mill.order.form</field>
         <field name = "model">sale.order</field>
@@ -14,13 +16,19 @@
             </xpath>
             <xpath expr = "//field[@name='payment_term_id']" position="after">
                 <field name = "po_id" />
+                <field name = "size" />
             </xpath>
             <xpath expr = "//page[@name='order_lines']/field[@name='order_line']/tree" position="inside">
                 <field name = "cut_length" />
                 <field name = "tolerance"/>
             </xpath>
             <xpath expr = "//group[@name ='sale_total']" position="inside">
+                <field name = "total_qty" />
+                <field name = "delivered_qty" />
                 <field name = "balance_qty" />
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree" position = "attributes">
+                <attribute name = "editable"></attribute>
             </xpath>
             <xpath expr = "//group[@name='note_group']" position = "inside">
                 <h2 attrs = "{'invisible':[('state','in',['draft','cancel'])]}" >Delivery Lines</h2>
@@ -36,5 +44,55 @@
             </xpath>
         </field>
     </record>
+    <!-- Sale Order Tree View -->
+    <record id="view_mill_order_tree" model="ir.ui.view">
+        <field name="name">mill.order.tree</field>
+        <field name = "model">sale.order</field>
+        <field name = "inherit_id" ref = "sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr = "//field[@name='partner_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr = "//field[@name='user_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr = "//field[@name='amount_total']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr = "//field[@name='invoice_status']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr = "//field[@name='date_order']" position="after">
+                <field name = "size" />
+                <field name = "total_qty" sum="Total Qty" />
+                <field name = "delivered_qty" string = "Completed Qty" sum="Delivered Qty"/>
+                <field name = "balance_qty" sum="Balance Qty" />
+                <field name = "net_rate" />
+                <field name = "note" string = "Note"/>
+                <field name = "state" />
+                <button name="action_done" type="object" string="Done"
+                    states="sale"
+                    help="If the sale is locked, you can not modify it anymore. However, you will still be able to invoice or deliver."
+                    groups="sales_team.group_sale_manager"/>
+            </xpath>
+        </field>
+    </record>
 
+    <!-- Editing original Sale Orders     -->
+    <record id="sale.action_orders" model="ir.actions.act_window">
+        <field name="name">Sales Orders</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,kanban,form,calendar,pivot,graph,activity</field>
+        <field name="search_view_id" ref="sale.sale_order_view_search_inherit_sale"/>
+        <field name="context">{'search_default_customer':1}</field>
+        <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel'))]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new quotation, the first step of a new sale!
+            </p><p>
+                Once the quotation is confirmed, it becomes a sales order.<br/> You will be able to create an invoice and collect the payment.
+            </p>
+        </field>
+    </record>
 </odoo>

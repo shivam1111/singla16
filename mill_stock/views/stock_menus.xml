@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <menuitem id = "menu_material_grades_root"
+                  parent = "mill_order.mill_management_roots"
+                  groups="sales_team.group_sale_salesman"
+                  name = "Grades"  sequence = "1"
+                   />
+
+       <!-- Grades Menu    -->
+        <menuitem id = "menu_material_grades"
+                  parent = "menu_material_grades_root"
+                  groups="sales_team.group_sale_salesman"
+                  name = "Grades" action = "action_material_grade" sequence = "40"
+                   />
+
+       <!-- Heat Menu    -->
+        <menuitem id = "menu_heat_heat"
+                  parent = "mill_order.mill_management_roots"
+                  groups="sales_team.group_sale_salesman"
+                  name = "Heats" action = "action_heat_heat" sequence = "40"
+                   />
+
+       <!-- Ingto Size Menu    -->
+        <menuitem id = "menu_ingot_size"
+                  parent = "menu_material_grades_root"
+                  groups = "purchase.group_purchase_user"
+                  name = "Ingot Size" action = "action_ingot_size" sequence = "40"
+                   />
+
+       <!-- Chemical Element Menu    -->
+       <menuitem
+           id= "chemical_element_management_sub_submenu"
+           parent= "menu_material_grades_root"
+           sequence= "3"
+           action = "action_chemical_element"
+            />
+</odoo>

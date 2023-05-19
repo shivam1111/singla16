@@ -5,12 +5,19 @@
     'name' : 'Mill Stock',
     'version': '1.1',
     'category': 'Mill Management',
-    'depends' : ['base','sale'],
+    'depends' : ['base','mill_order'],
     'description': """
     Mill Sales Order
     """,
     'data': [
         'data/stock_data.xml',
+        'data/ir_sequence_data.xml',
+        'security/ir.model.access.csv',
+        'views/material_grade.xml',
+        'views/heat_heat.xml',
+        'views/stock_menus.xml',
+        'views/sale_order_line_view.xml',
+        'views/product_template.xml',
     ],
     'demo': [
     ],

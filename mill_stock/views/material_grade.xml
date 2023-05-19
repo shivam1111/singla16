@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		<record id="view_material_grade_tree" model="ir.ui.view">
+		    <field name="name">material.grade.tree</field>
+		    <field name="model">material.grade</field>
+		    <field name="arch" type="xml">
+		        <tree string="Material Grade" >
+					<field name = "name" />
+		        </tree>
+	        </field>
+        </record>
+
+		<record id="view_material_grade_form" model="ir.ui.view">
+		    <field name="name">material.grade.form</field>
+		    <field name="model">material.grade</field>
+		    <field name="arch" type="xml">
+		        <form string="Material Grade" >
+					<sheet>
+                        <div class="oe_title">
+                            <label for="name" string="Name"/>
+                            <h1>
+                                <div class="d-flex">
+                                    <field class="text-break" name="name" placeholder="e.g. Cheese Burger"/>
+                                </div>
+                            </h1>
+                        </div>
+                        <div name="options">
+                            <span class="d-inline-block">
+                                <field name="active"/>
+                                <label for="active"/>
+                            </span>
+                            <span class="d-inline-block">
+                                <label for="name_str"/>
+                                <field name="name_str"/>
+
+                            </span>
+                        </div>
+                        <notebook>
+                            <page name = "composition" string ="Composition">
+                                <field name = "line_ids" nolabel = "1">
+                                    <tree string = "Composition Line" editable = "1">
+                                        <field name = "sequence" widget="handle"/>
+                                        <field name = "element_id" />
+                                        <field name = "min_val" />
+                                        <field name = "max_val"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+		        </form>
+	        </field>
+        </record>
+
+        <record id="action_material_grade" model="ir.actions.act_window">
+            <field name="name">Material Grades</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">material.grade</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>
+
+        <!-- Chemical Element -->
+		<record id="view_element_element_form" model="ir.ui.view">
+		    <field name="name">element.element.tree</field>
+		    <field name="model">element.element</field>
+		    <field name="arch" type="xml">
+			    <tree string = "Chemical Element" editable="bottom">
+			    		<field name = "name" />
+			    		<field name = "code" />
+                </tree>
+		    </field>
+	    </record>
+        <record id="action_chemical_element" model="ir.actions.act_window">
+            <field name="name">Element</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">element.element</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{}</field>
+        </record>
+
+</odoo>

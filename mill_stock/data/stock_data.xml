@@ -20,5 +20,13 @@
             <field name = "name">Round</field>
             <field name = "attribute_id" ref="mill_stock.attribute_edge"/>
         </record>
+        <record id = "attribute_value_round_bar" model = "product.attribute.value">
+            <field name = "name">RD</field>
+            <field name = "attribute_id" ref="mill_stock.attribute_edge"/>
+        </record>
+        <record id = "attribute_value_unknown" model = "product.attribute.value">
+            <field name = "name">Unknown</field>
+            <field name = "attribute_id" ref="mill_stock.attribute_edge"/>
+        </record>
     </data>
 </odoo>
