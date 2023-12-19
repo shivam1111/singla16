@@ -5,7 +5,7 @@
     'name' : 'Mill Stock',
     'version': '1.1',
     'category': 'Mill Management',
-    'depends' : ['base','mill_order'],
+    'depends' : ['base','mill_order','stock_picking_purchase_order_link'],
     'description': """
     Mill Sales Order
     """,
