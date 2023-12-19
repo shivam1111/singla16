@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<template id="homepage" inherit_id="website.homepage" name = "Singla Website Homepage">
+    		<xpath expr ="//div[@id='wrap']" position = "inside">
+				<!-- Carousel -->
+				<div id="main-slide" class="carousel slide" data-ride="carousel">
+		
+					<!-- Indicators -->
+					<ol class="carousel-indicators visible-lg visible-md">
+						<li data-target="#main-slide" data-slide-to="0" class="active"></li>
+						<li data-target="#main-slide" data-slide-to="1"></li>
+						<li data-target="#main-slide" data-slide-to="2"></li>
+					</ol>
+					<!--/ Indicators end-->
+		
+					<!-- Carousel inner -->
+					<div class="carousel-inner">
+		
+						<div class="item active" style="background-image:url(/singla_website/static/src/img/slider-main/SSAI16.jpeg)">
+							<div class="slider-content">
+								<div class="col-md-12 text-center">
+									<h2 class="slide-title animated4">37 Years of excellence in</h2>
+									<h3 class="slide-sub-title animated5">Steel Industry</h3>
+									<p>
+										<a href="/page/products/" class="slider btn btn-primary">Our Products</a>
+										<a href="/page/contactus" class="slider btn btn-primary border">Contact Now</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<!--/ Carousel item 1 end -->
+		
+						<div class="item" style="background-image:url(/singla_website/static/src/img/slider-main/SSAI12.jpeg)">
+							<div class="slider-content text-left">
+								<div class="col-md-12">
+									<h2 class="slide-title-box animated2">World Class Service</h2>
+									<h3 class="slide-title animated3">When Quality Matters</h3>
+									<h3 class="slide-sub-title animated3">Your Choice is Simple</h3>
+									<p class="animated3">
+										<a href="/page/products/" class="slider btn btn-primary border">Our Products</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<!--/ Carousel item 2 end -->
+		
+						<div class="item" style="background-image:url(/singla_website/static/src/img/slider-main/bg3.jpg)">
+							<div class="slider-content text-right">
+								<div class="col-md-12">
+									<h2 class="slide-title animated6">Meet Our Engineers</h2>
+									<h3 class="slide-sub-title animated7">We believe sustainability</h3>
+									<p class="slider-description lead animated7">We will deal with your failure that determines how you
+										achieve success.</p>
+									<p>
+										<a href="/page/contactus" class="slider btn btn-primary">Get Free Quote</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<!--/ Carousel item 3 end -->
+		
+					</div><!-- Carousel inner end-->
+		
+					<!-- Controllers -->
+					<a class="left carousel-control" href="#main-slide" data-slide="prev">
+						<span><i class="fa fa-angle-left"></i></span>
+					</a>
+					<a class="right carousel-control" href="#main-slide" data-slide="next">
+						<span><i class="fa fa-angle-right"></i></span>
+					</a>
+				</div>
+				<!--/ Carousel end --> 
+				<section class="call-to-action-box no-padding">
+					<div class="container">
+						<div class="action-style-box">
+							<div class="row">
+								<div class="col-md-10">
+									<div class="call-to-action-text">
+										<h3 class="action-title">We understand your requirements</h3>
+									</div>
+								</div><!-- Col end -->
+								<div class="col-md-2">
+									<div class="call-to-action-btn">
+										<a class="btn btn-dark" href="/page/contactus">Request Quote</a>
+									</div>
+								</div><!-- col end -->
+							</div><!-- row end -->
+						</div><!-- Action style box -->
+					</div><!-- Container end -->
+				</section><!-- Action end -->	
+				
+				<section id="ts-features" class="ts-features">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-xs-12">
+								<div class="ts-intro">
+									<h2 class="into-title">About Us</h2>
+									<h3 class="into-sub-title">We fulfill your requirements</h3>
+									<p>We are one of the leading manufacturers of Spring Steel Flat Bars. We strictly adhere to our Customer's requirements 
+									and strive to deliver best quality in time. We believe in a very strong feedback system. It is this continuous feedback from 
+									our customer which fuels our obsession to keep making improvements.   
+									</p>
+								</div><!-- Intro box end -->
+		
+								<div class="gap-20"></div>
+		
+								<div class="row">
+									<div class="col-md-6">
+										<div class="ts-service-box">
+											<span class="ts-service-icon">
+												<i class="fa fa-trophy"></i>
+											</span>
+											<div class="ts-service-box-content">
+												<h3 class="service-box-title">We've Reputation for Excellence</h3>
+											</div>
+										</div><!-- Service 1 end -->
+									</div><!-- col end -->
+		
+									<div class="col-md-6">
+										<div class="ts-service-box">
+											<span class="ts-service-icon">
+												<i class="fa fa-sliders"></i>
+											</span>
+											<div class="ts-service-box-content">
+												<h3 class="service-box-title">We Build Partnerships</h3>
+											</div>
+										</div><!-- Service 2 end -->
+									</div><!-- col end -->
+								</div><!-- Content row 1 end -->
+		
+								<div class="row">
+									<div class="col-md-6">
+										<div class="ts-service-box">
+											<span class="ts-service-icon">
+												<i class="fa fa-thumbs-up"></i>
+											</span>
+											<div class="ts-service-box-content">
+												<h3 class="service-box-title">Guided by Commitment</h3>
+											</div>
+										</div><!-- Service 1 end -->
+									</div><!-- col end -->
+		
+									<div class="col-md-6">
+										<div class="ts-service-box">
+											<span class="ts-service-icon">
+												<i class="fa fa-users"></i>
+											</span>
+											<div class="ts-service-box-content">
+												<h3 class="service-box-title">A Team of Professionals</h3>
+											</div>
+										</div><!-- Service 2 end -->
+									</div><!-- col end -->
+								</div><!-- Content row 1 end -->
+							</div><!-- Col end -->
+		
+							<div class="col-md-6 col-xs-12">
+								<h3 class="into-sub-title">Our Values</h3>
+								<p>Defined core company values help us ensure that each one our employee from top leadership to entry-level are working
+								in sync towards the same common goal, and share the same purpose
+								</p>
+								<div class="panel-group" id="accordion">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Quality</a>
+											</h4>
+										</div>
+										<div id="collapseOne" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<p>We provide outstanding products and unsurpassed service that, together, deliver premium value to our customers.</p>
+											</div>
+										</div>
+									</div>
+									<!--/ Panel 1 end-->
+		
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseTwo">Customer Commitment</a>
+											</h4>
+										</div>
+										<div id="collapseTwo" class="panel-collapse collapse">
+											<div class="panel-body">
+												<p>We develop relationships that make a positive difference in our customers' lives.</p>
+											</div>
+										</div>
+									</div>
+									<!--/ Panel 2 end-->
+		
+		
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseThree">
+													Personal Accountability</a>
+											</h4>
+										</div>
+										<div id="collapseThree" class="panel-collapse collapse">
+											<div class="panel-body">
+												<p>We are personally accountable for delivering on our commitments.</p>
+											</div>
+										</div>
+									</div>
+									<!--/ Panel 3 end-->
+									
+									
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseFour">
+													Respect for People</a>
+											</h4>
+										</div>
+										<div id="collapseFour" class="panel-collapse collapse">
+											<div class="panel-body">
+												<p>We value our people, encourage their development and reward their performance.</p>
+											</div>
+										</div>
+									</div>
+									<!--/ Panel 4 end-->									
+		
+								</div>
+								<!--/ Accordion end -->
+		
+							</div><!-- Col end -->
+						</div><!-- Row end -->
+					</div><!-- Container end -->
+				</section><!-- Feature are end -->
+				
+				<section id="facts" class="facts-area dark-bg">
+					<div class="container">
+						<div class="row">
+							<div class="facts-wrapper">
+								<div class="col-sm-4 ts-facts">
+									<div class="ts-facts-img">
+										<img src="/singla_website/static/src/img/icon-image/fact1.png" alt="" />
+									</div>
+									<div class="ts-facts-content">
+										<h2 class="ts-facts-num"><span class="counterUp" data-count="37">0</span></h2>
+										<h3 class="ts-facts-title">Years of Experience</h3>
+									</div>
+								</div><!-- Col end -->
+		
+								<div class="col-sm-4 ts-facts">
+									<div class="ts-facts-img">
+										<img src="/singla_website/static/src/img/icon-image/fact2.png" alt="" />
+									</div>
+									<div class="ts-facts-content">
+										<h2 class="ts-facts-num"><span class="counterUp" t-attf-data-count="{{ website.get_count_customers() }}">0</span></h2>
+										<h3 class="ts-facts-title">Customers</h3>
+									</div>
+								</div><!-- Col end -->
+		
+								<div class="col-sm-4 ts-facts">
+									<div class="ts-facts-img">
+										<img src="/singla_website/static/src/img/icon-image/fact3.png" alt="" />
+									</div>
+									<div class="ts-facts-content">
+										<h2 class="ts-facts-num"><span class="counterUp" data-count="24">0</span></h2>
+										<h3 class="ts-facts-title">Hours Available</h3>
+									</div>
+								</div><!-- Col end -->
+		
+							<!-- <div class="col-sm-3 ts-facts">
+									<div class="ts-facts-img">
+										<img src="/singla_website/static/src/img/icon-image/fact4.png" alt="" />
+									</div>
+									<div class="ts-facts-content">
+										<h2 class="ts-facts-num"><span class="counterUp" t-attf-data-count="{{ website.get_page_view_count() }}">0</span></h2>
+									</div>
+								</div> --> <!-- Col end -->
+
+							</div> <!-- Facts end -->
+						</div>
+						<!--/ Content row end -->
+					</div>
+					<!--/ Container end -->
+				</section><!-- Facts end -->
+				
+				<section id="ts-service-area" class="ts-service-area">
+					<div class="container">
+						<div class="row text-center">
+							<h2 class="section-title">We Are Specialists In</h2>
+							<h3 class="section-sub-title">What We Do</h3>
+						</div>
+						<!--/ Title row end -->
+		
+						<div class="row">
+							<div class="col-md-4">
+								<div class="ts-service-box">
+									<div class="ts-service-box-img pull-left">
+										<img src="/singla_website/static/src/img/icon-image/service-icon1.png" alt="" />
+									</div>
+									<div class="ts-service-box-info">
+										<h3 class="service-box-title"><a href="#">Pollution Free</a></h3>
+										<p>We are using and maintaining a good APCD to keep our environment green and pollution free.</p> 
+									</div>
+								</div><!-- Service 1 end -->
+		
+								<div class="ts-service-box">
+									<div class="ts-service-box-img pull-left">
+										<img src="/singla_website/static/src/img/icon-image/service-icon2.png" alt="" />
+									</div>
+									<div class="ts-service-box-info">
+										<h3 class="service-box-title"><a href="#">R &amp; D</a></h3>
+										<p>We are continuously dedicating our resources to deliver better quality and more value to our Customers</p>
+									</div>
+								</div><!-- Service 2 end -->
+		
+								<div class="ts-service-box">
+									<div class="ts-service-box-img pull-left">
+										<img src="/singla_website/static/src/img/icon-image/service-icon3.png" alt="" />
+									</div>
+									<div class="ts-service-box-info">
+										<h3 class="service-box-title"><a href="#">Test Certificate</a></h3>
+										<p>All requirements given by our Customers are tested and recorded. All dispatches are done only when all requirements are fulfilled and a test certificate is issued.</p>
+									</div>
+								</div><!-- Service 3 end -->
+		
+							</div><!-- Col end -->
+		
+							<div class="col-md-4 text-center">
+								<img class="service-center-img img-responsive" src="/singla_website/static/src/img/services/service-center.jpg" alt="" />
+							</div><!-- Col end -->
+		
+							<div class="col-md-4">
+								<div class="ts-service-box">
+									<div class="ts-service-box-img pull-left">
+										<img src="/singla_website/static/src/img/icon-image/service-icon4.png" alt="" />
+									</div>
+									<div class="ts-service-box-info">
+										<h3 class="service-box-title"><a href="#">Callibration</a></h3>
+										<p>All our quality control equipments are callibrated and certified by concerned authority.</p>
+									</div>
+								</div><!-- Service 4 end -->
+		
+								<div class="ts-service-box">
+									<div class="ts-service-box-img pull-left">
+										<img src="/singla_website/static/src/img/icon-image/service-icon5.png" alt="" />
+									</div>
+									<div class="ts-service-box-info">
+										<h3 class="service-box-title"><a href="#">Plant Upgradation</a></h3>
+										<p>We are continuously upgrading our plant &amp; machinery to improve our efficiency and quality
+										   Technology is always in a state of change since new developments are continually emerging. 
+										</p>
+									</div>
+								</div><!-- Service 5 end -->
+		
+								<div class="ts-service-box">
+									<div class="ts-service-box-img pull-left">
+										<img src="/singla_website/static/src/img/icon-image/service-icon6.png" alt="" />
+									</div>
+									<div class="ts-service-box-info">
+										<h3 class="service-box-title"><a href="#">Safety Management</a></h3>
+										<p>Worker's safety is our utmost priority. We feel completely responsible for providing a safe working environment to our people.</p>
+									</div>
+								</div><!-- Service 6 end -->
+							</div><!-- Col end -->
+						</div><!-- Content row end -->
+					</div>
+					<!--/ Container end -->
+				</section><!-- Service end -->
+							   		    			
+    		</xpath>
+    	</template>
+    </data>
+</odoo>
